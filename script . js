@@ -1,48 +1,63 @@
-// Welcome Message
+// Welcome message
 window.onload = function () {
     alert("Welcome to our Fashion Store!");
 };
 
-// Promotion Button
+// Promotion popup
 function showPromo() {
-    alert("🎉 Special Promotion!\nGet 30% OFF on selected fashion items.");
+    alert("🎉 Special Promotion! Get 30% OFF on selected items.");
 }
 
 // Form Validation
-document.getElementById("fashionForm").addEventListener("submit", function(event){
+document.getElementById("fashionForm").addEventListener("submit", function(e){
 
-    event.preventDefault();
+    e.preventDefault();
 
-    let name = document.getElementById("name").value.trim();
-    let email = document.getElementById("email").value.trim();
-    let phone = document.getElementById("phone").value.trim();
-    let gender = document.getElementById("gender").value;
+    document.getElementById("nameError").innerHTML="";
+    document.getElementById("emailError").innerHTML="";
+    document.getElementById("phoneError").innerHTML="";
+    document.getElementById("genderError").innerHTML="";
 
-    let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-    let phonePattern = /^[0-9]{10}$/;
+    let name=document.getElementById("name").value.trim();
+    let email=document.getElementById("email").value.trim();
+    let phone=document.getElementById("phone").value.trim();
+    let gender=document.getElementById("gender").value;
+
+    let valid=true;
 
     if(name==""){
-        alert("Please enter your name.");
-        return;
+        document.getElementById("nameError").innerHTML="Name is required.";
+        valid=false;
     }
 
-    if(!email.match(emailPattern)){
-        alert("Please enter a valid email.\nExample: stacey20@gmail.com");
-        return;
+    let emailPattern=/^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+    if(email==""){
+        document.getElementById("emailError").innerHTML="Email is required.";
+        valid=false;
+    }else if(!emailPattern.test(email)){
+        document.getElementById("emailError").innerHTML="Example: stacey20@gmail.com";
+        valid=false;
     }
 
-    if(!phone.match(phonePattern)){
-        alert("Please enter a valid 10-digit phone number.");
-        return;
+    let phonePattern=/^[0-9]{10}$/;
+
+    if(phone==""){
+        document.getElementById("phoneError").innerHTML="Phone number is required.";
+        valid=false;
+    }else if(!phonePattern.test(phone)){
+        document.getElementById("phoneError").innerHTML="Phone number must contain 10 digits.";
+        valid=false;
     }
 
     if(gender==""){
-        alert("Please select your gender.");
-        return;
+        document.getElementById("genderError").innerHTML="Please select your gender.";
+        valid=false;
     }
 
-    alert("Registration Successful!");
-
-    document.getElementById("fashionForm").reset();
+    if(valid){
+        alert("Registration Successful!");
+        document.getElementById("fashionForm").reset();
+    }
 
 });
