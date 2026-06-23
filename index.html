@@ -1,365 +1,127 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+    <meta charset="UTF-8">
     <title>Fashion Store Online</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
+    <!-- HEADER -->
+    <header>
+        <h1>Fashion Store Online</h1>
+        <p>Your Style, Your Identity</p>
+    </header>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Men</a>
+        <a href="#">Women</a>
+        <a href="#">Accessories</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <!-- HERO SECTION -->
     <section class="hero">
         <h2>Welcome to Our Fashion Store</h2>
         <p>Discover the latest fashion trends and exclusive collections.</p>
+
         <button onclick="showPromo()">View Promotion</button>
     </section>
-    
-<h1>Fashion Store Online</h1>
 
-<!-- Navigation -->
-<nav>
-    <a href="#">Home</a>
-    <a href="#">Men</a>
-    <a href="#">Women</a>
-    <a href="#">Accessories</a>
-    <a href="#">Contact</a>
-</nav>
-
-
-<p>
-Discover the latest fashion trends, stylish clothing,
-accessories, seasonal collections, and exclusive deals.
-</p>
-
-<h2>Fashion Categories</h2>
-
-<ul>
-    <li>Men's Fashion</li>
-    <li>Women's Fashion</li>
-    <li>Kids' Fashion</li>
-    <li>Shoes & Footwear</li>
-    <li>Accessories</li>
-</ul>
-
-<h2>Fashion Gallery</h2>
-
-<img src="https://images.unsplash.com/photo-1445205170230-053b83016050?w=500"
-     width="300" height="200" alt="Fashion Model">
-
-<img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=500"
-     width="300" height="200" alt="Fashion Collection">
-
-<img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=500"
-     width="300" height="200" alt="Fashion Accessories">
-
-<h2>Featured Products</h2>
-
-<table border="1">
-<tr>
-    <th>Product</th>
-    <th>Category</th>
-    <th>Price</th>
-</tr>
-
-<tr>
-    <td>Classic Denim Jacket</td>
-    <td>Men's Fashion</td>
-    <td>$59.99</td>
-</tr>
-
-<tr>
-    <td>Elegant Summer Dress</td>
-    <td>Women's Fashion</td>
-    <td>$49.99</td>
-</tr>
-
-<tr>
-    <td>Designer Sneakers</td>
-    <td>Footwear</td>
-    <td>$79.99</td>
-</tr>
-
-</table>
-
-<h2>Store Audio</h2>
-
-<audio controls>
-    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-    Your browser does not support audio.
-</audio>
-
-<h2>Fashion Runway Video</h2>
-
-<video width="500" controls>
-    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-    Your browser does not support video.
-</video>
-
-<h2>Featured Fashion Collection</h2>
-
-<iframe width="560" height="315"
-src="https://www.youtube.com/embed/Pgmx7z49OEk"
-title="Fashion Collection Video"
-allowfullscreen>
-</iframe>
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
-}
-
-body{
-    background:linear-gradient(to right,#f8e1f4,#d9e4ff);
-    color:#333;
-}
-
-/* Navigation */
-nav{
-    background:#222;
-    padding:20px;
-    text-align:center;
-}
-
-nav a{
-    color:white;
-    text-decoration:none;
-    margin:0 20px;
-    font-size:18px;
-    font-weight:bold;
-}
-
-nav a:hover{
-    color:#ffb6c1;
-}
-
-/* Heading */
-header{
-    text-align:center;
-    padding:40px;
-}
-
-header h1{
-    color:#4b0082;
-    font-size:40px;
-}
-
-/* Table */
-.table-section{
-    padding:30px;
-}
-
-.table-section h2{
-    text-align:center;
-    margin-bottom:20px;
-    color:#4b0082;
-}
-
-table{
-    width:100%;
-    border-collapse:collapse;
-    background:white;
-}
-
-th{
-    background:#4b0082;
-    color:white;
-    padding:15px;
-}
-
-td{
-    background:#f5f5f5;
-    padding:15px;
-    text-align:center;
-}
-
-tr:nth-child(even) td{
-    background:#e6e6fa;
-}
-
-/* Image Grid */
-.gallery{
-    padding:30px;
-}
-
-.gallery h2{
-    text-align:center;
-    margin-bottom:20px;
-    color:#4b0082;
-}
-
-.image-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:15px;
-}
-
-.image-grid img{
-    width:100%;
-    height:250px;
-    object-fit:cover;
-    border-radius:10px;
-}
-
-/* Video Grid */
-.video-section{
-    padding:30px;
-}
-
-.video-section h2{
-    text-align:center;
-    margin-bottom:20px;
-    color:#4b0082;
-}
-
-.video-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:15px;
-}
-
-video{
-    width:100%;
-    border-radius:10px;
-}
-
-/* Footer */
-footer{
-    text-align:center;
-    padding:20px;
-    background:#222;
-    color:white;
-    margin-top:20px;
-}
-</style>
-</head>
-
-<body>
-
-<!-- Header -->
-<header>
-    <h1>Fashion Store</h1>
-    <p>Your Style, Your Identity</p>
-</header>
-
-<!-- Table -->
-<section class="table-section">
-    <h2>Available Products</h2>
-
-    <table border="1">
-        <tr>
-            <th>Product</th>
-            <th>Category</th>
-            <th>Price</th>
-            <th>Stock</th>
-        </tr>
-
-        <tr>
-            <td>Designer Dress</td>
-            <td>Women</td>
-            <td>$50</td>
-            <td>20</td>
-        </tr>
-
-        <tr>
-            <td>Leather Jacket</td>
-            <td>Men</td>
-            <td>$80</td>
-            <td>15</td>
-        </tr>
-
-        <tr>
-            <td>Handbag</td>
-            <td>Accessories</td>
-            <td>$40</td>
-            <td>25</td>
-        </tr>
-
-        <tr>
-            <td>Sneakers</td>
-            <td>Footwear</td>
-            <td>$60</td>
-            <td>30</td>
-        </tr>
-    </table>
-</section>
-
-<!-- Images Grid -->
-<section class="gallery">
-    <h2>Fashion Gallery</h2>
-
-    <div class="image-grid">
-        <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c" alt="Fashion 1">
-        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b" alt="Fashion 2">
-        <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b" alt="Fashion 3">
-        <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f" alt="Fashion 4">
-    </div>
-</section>
-
-    </div>
-</section>
-<!-- External CSS -->
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-    <header>
-        <h1>Elegant Fashion Store</h1>
-        <p>Trendy Styles for Every Season</p>
-    </header>
-
-    <section class="products">
-        <h2>Featured Collections</h2>
-
-        <div class="card">
-            <h3>Women's Collection</h3>
-            <p>New arrivals with up to 30% discount.</p>
-        </div>
-
-        <div class="card">
-            <h3>Men's Collection</h3>
-            <p>Stylish outfits for every occasion.</p>
-        </div>
-
-        <div class="card">
-            <h3>Accessories</h3>
-            <p>Bags, watches, sunglasses and more.</p>
-        </div>
+    <!-- CATEGORY SECTION -->
+    <section class="categories">
+        <h2>Fashion Categories</h2>
+        <ul>
+            <li>Men's Fashion</li>
+            <li>Women's Fashion</li>
+            <li>Kids' Fashion</li>
+            <li>Shoes & Footwear</li>
+            <li>Accessories</li>
+        </ul>
     </section>
-<section class="form-section">
-    <h2>Customer Registration Form</h2>
 
-    <form id="fashionForm" novalidate>
+    <!-- GALLERY -->
+    <section class="gallery">
+        <h2>Fashion Gallery</h2>
 
-        <label>Name</label>
-        <input type="text" id="name">
-        <small id="nameError" class="error"></small>
+        <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?w=500" width="250">
+        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=500" width="250">
+        <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=500" width="250">
+    </section>
 
-        <label>Email</label>
-        <input type="email" id="email">
-        <small id="emailError" class="error"></small>
+    <!-- PRODUCTS TABLE -->
+    <section class="products">
+        <h2>Featured Products</h2>
 
-        <label>Phone Number</label>
-        <input type="text" id="phone">
-        <small id="phoneError" class="error"></small>
+        <table border="1">
+            <tr>
+                <th>Product</th>
+                <th>Category</th>
+                <th>Price</th>
+            </tr>
 
-        <label>Gender</label>
-        <select id="gender">
-            <option value="">Select Gender</option>
-            <option>Male</option>
-            <option>Female</option>
-        </select>
-        <small id="genderError" class="error"></small>
+            <tr>
+                <td>Denim Jacket</td>
+                <td>Men</td>
+                <td>$59.99</td>
+            </tr>
 
-        <button type="submit">Submit</button>
+            <tr>
+                <td>Summer Dress</td>
+                <td>Women</td>
+                <td>$49.99</td>
+            </tr>
 
-    </form>
-</section>
+            <tr>
+                <td>Sneakers</td>
+                <td>Footwear</td>
+                <td>$79.99</td>
+            </tr>
+        </table>
+    </section>
 
-<script src="script.js"></script>
+    <!-- FORM -->
+    <section class="form-section">
+        <h2>Customer Registration</h2>
 
+        <form id="fashionForm">
+
+            <label>Name</label>
+            <input type="text" id="name">
+            <small class="error" id="nameError"></small>
+
+            <label>Email</label>
+            <input type="text" id="email">
+            <small class="error" id="emailError"></small>
+
+            <label>Phone Number</label>
+            <input type="text" id="phone">
+            <small class="error" id="phoneError"></small>
+
+            <label>Gender</label>
+            <select id="gender">
+                <option value="">Select Gender</option>
+                <option>Male</option>
+                <option>Female</option>
+            </select>
+            <small class="error" id="genderError"></small>
+
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <!-- FOOTER -->
     <footer>
-        <p>&copy; 2026 Fashion Store. All Rights Reserved</p>
+        <p>&copy; 2026 Fashion Store</p>
     </footer>
 
+    <!-- External JavaScript -->
     <script src="script.js"></script>
 
 </body>
