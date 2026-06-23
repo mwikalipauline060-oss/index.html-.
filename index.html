@@ -324,20 +324,22 @@ footer{
             <p>Bags, watches, sunglasses and more.</p>
         </div>
     </section>
-
 <section class="form-section">
     <h2>Customer Registration Form</h2>
 
-    <form id="fashionForm">
+    <form id="fashionForm" novalidate>
 
         <label>Name</label>
-        <input type="text" id="name" placeholder="Enter your name">
+        <input type="text" id="name">
+        <small id="nameError" class="error"></small>
 
         <label>Email</label>
-        <input type="email" id="email" placeholder="example@gmail.com">
+        <input type="email" id="email">
+        <small id="emailError" class="error"></small>
 
         <label>Phone Number</label>
-        <input type="text" id="phone" placeholder="Enter phone number">
+        <input type="text" id="phone">
+        <small id="phoneError" class="error"></small>
 
         <label>Gender</label>
         <select id="gender">
@@ -345,6 +347,7 @@ footer{
             <option>Male</option>
             <option>Female</option>
         </select>
+        <small id="genderError" class="error"></small>
 
         <button type="submit">Submit</button>
 
