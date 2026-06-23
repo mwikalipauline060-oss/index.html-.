@@ -1,56 +1,321 @@
-.form-section{
-    width:50%;
-    margin:30px auto;
-    background:white;
-    padding:20px;
-    border-radius:10px;
+/* ===========================
+   RESET & BASE
+=========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.form-section h2{
-    text-align:center;
-    color:#4b0082;
-    margin-bottom:20px;
+body {
+    font-family: 'Georgia', serif;
+    background-color: #fdf6f0;
+    color: #2c2c2c;
 }
 
-label{
-    display:block;
-    margin-top:15px;
-    font-weight:bold;
+/* ===========================
+   NAVIGATION — centered
+=========================== */
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1a1a2e;
+    padding: 18px 40px;
+    gap: 12px;
 }
 
-input,
-select{
-    width:100%;
-    padding:10px;
-    margin-top:5px;
-    border:1px solid #ccc;
-    border-radius:5px;
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: #e8b86d;
+    letter-spacing: 3px;
+    text-transform: uppercase;
 }
 
-button{
-    margin-top:20px;
-    width:100%;
-    padding:12px;
-    background:#4b0082;
-    color:white;
-    border:none;
-    border-radius:5px;
-    cursor:pointer;
-    font-size:16px;
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
 }
 
-button:hover{
-    background:#6a0dad;
-}
-.error{
-    color:red;
-    font-size:14px;
-    display:block;
-    margin-bottom:10px;
+.nav-links a {
+    text-decoration: none;
+    color: #f0e6d3;
+    font-size: 15px;
+    letter-spacing: 1px;
+    transition: color 0.3s;
 }
 
-input,select{
-    width:100%;
-    padding:10px;
-    margin-bottom:5px;
+.nav-links a:hover {
+    color: #e8b86d;
 }
+
+/* ===========================
+   HERO SECTION
+=========================== */
+.hero {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: #f0e6d3;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 52px;
+    letter-spacing: 4px;
+    color: #e8b86d;
+    margin-bottom: 16px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    opacity: 0.85;
+}
+
+.btn {
+    background-color: #e8b86d;
+    color: #1a1a2e;
+    padding: 14px 36px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border-radius: 2px;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background-color: #d4a055;
+}
+
+/* ===========================
+   TABLE SECTION
+=========================== */
+.table-section {
+    padding: 60px 40px;
+    background-color: #fff8f2;
+}
+
+.table-section h2,
+.media-section h2,
+.form-section h2 {
+    text-align: center;
+    font-size: 32px;
+    color: #1a1a2e;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+table thead {
+    background-color: #1a1a2e;
+    color: #e8b86d;
+}
+
+table thead th {
+    padding: 16px 20px;
+    text-align: left;
+    letter-spacing: 1px;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+table tbody tr {
+    border-bottom: 1px solid #f0e6d3;
+    transition: background 0.2s;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #fdf6f0;
+}
+
+table tbody tr:hover {
+    background-color: #f5e6d3;
+}
+
+table tbody td {
+    padding: 14px 20px;
+    font-size: 15px;
+    color: #3a3a3a;
+}
+
+/* ===========================
+   MEDIA GRID (Images & Videos)
+=========================== */
+.media-section {
+    padding: 60px 40px;
+    background-color: #1a1a2e;
+}
+
+.media-section h2 {
+    color: #e8b86d;
+}
+
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    gap: 20px;
+}
+
+.media-item {
+    background-color: #16213e;
+    border-radius: 4px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.media-item:hover {
+    transform: scale(1.03);
+}
+
+.media-item img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    display: block;
+}
+
+.media-item video {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    display: block;
+    background: #0f3460;
+}
+
+.media-item p {
+    padding: 12px;
+    color: #f0e6d3;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* ===========================
+   FORM SECTION
+=========================== */
+.form-section {
+    padding: 60px 40px;
+    background-color: #fdf6f0;
+    text-align: center;
+}
+
+.form-section p {
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 15px;
+}
+
+#registrationForm {
+    max-width: 520px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    color: #1a1a2e;
+    margin-bottom: 6px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1.5px solid #d0c0b0;
+    border-radius: 2px;
+    font-size: 15px;
+    background-color: #fff;
+    color: #2c2c2c;
+    transition: border-color 0.3s;
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #e8b86d;
+}
+
+.error {
+    color: #c0392b;
+    font-size: 12px;
+    display: block;
+    margin-top: 4px;
+}
+
+#registrationForm button {
+    width: 100%;
+    padding: 14px;
+    background-color: #1a1a2e;
+    color: #e8b86d;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: background 0.3s;
+    font-family: inherit;
+}
+
+#registrationForm button:hover {
+    background-color: #0f3460;
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+footer {
+    background-color: #1a1a2e;
+    color: #f0e6d3;
+    text-align: center;
+    padding: 24px;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 768px) {
+    .media-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .table-section,
+    .media-section,
+    .form-section {
+        padding: 40px 16px;
+    }
+
+    table thead th,
+    table tbody td {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+    }
