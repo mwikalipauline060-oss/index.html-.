@@ -1,11 +1,11 @@
-// Welcome Popup
+// Welcome Message
 window.onload = function () {
-    alert("Welcome to Elegant Fashion Store!");
+    alert("Welcome to our Fashion Store!");
 };
 
-// Promotion Popup
+// Promotion Button
 function showPromo() {
-    alert("Special Fashion Offer! Get 25% OFF on all new arrivals this week.");
+    alert("🎉 Special Promotion!\nGet 30% OFF on selected fashion items.");
 }
 
 // Form Validation
@@ -19,26 +19,30 @@ document.getElementById("fashionForm").addEventListener("submit", function(event
     let gender = document.getElementById("gender").value;
 
     let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    let phonePattern = /^[0-9]{10}$/;
 
-    if(name === ""){
-        alert("Please enter your name");
+    if(name==""){
+        alert("Please enter your name.");
         return;
     }
 
     if(!email.match(emailPattern)){
-        alert("Enter a valid email address");
+        alert("Please enter a valid email.\nExample: stacey20@gmail.com");
         return;
     }
 
-    if(phone.length < 10){
-        alert("Enter a valid phone number");
+    if(!phone.match(phonePattern)){
+        alert("Please enter a valid 10-digit phone number.");
         return;
     }
 
-    if(gender === ""){
-        alert("Please select gender");
+    if(gender==""){
+        alert("Please select your gender.");
         return;
     }
 
     alert("Registration Successful!");
+
+    document.getElementById("fashionForm").reset();
+
 });
