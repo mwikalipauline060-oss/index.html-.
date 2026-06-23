@@ -316,10 +316,72 @@ footer{
         </video>
     </div>
 </section>
+<!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-<!-- Footer -->
-<footer>
-    <p>&copy; 2026 Fashion Store. All Rights Reserved.</p>
-</footer>
+    <header>
+        <h1>Elegant Fashion Store</h1>
+        <p>Trendy Styles for Every Season</p>
+    </header>
+
+    <section class="hero">
+        <h2>Welcome to Our Fashion Store</h2>
+        <p>Discover the latest fashion trends and exclusive collections.</p>
+        <button onclick="showPromo()">View Promotion</button>
+    </section>
+
+    <section class="products">
+        <h2>Featured Collections</h2>
+
+        <div class="card">
+            <h3>Women's Collection</h3>
+            <p>New arrivals with up to 30% discount.</p>
+        </div>
+
+        <div class="card">
+            <h3>Men's Collection</h3>
+            <p>Stylish outfits for every occasion.</p>
+        </div>
+
+        <div class="card">
+            <h3>Accessories</h3>
+            <p>Bags, watches, sunglasses and more.</p>
+        </div>
+    </section>
+
+    <section class="form-section">
+        <h2>Customer Registration Form</h2>
+
+        <form id="fashionForm">
+
+            <label>Name</label>
+            <input type="text" id="name" placeholder="Enter your name">
+
+            <label>Email</label>
+            <input type="email" id="email" placeholder="example@gmail.com">
+
+            <label>Phone Number</label>
+            <input type="text" id="phone" placeholder="Enter phone number">
+
+            <label>Gender</label>
+            <select id="gender">
+                <option value="">Select Gender</option>
+                <option>Male</option>
+                <option>Female</option>
+            </select>
+
+            <button type="submit">Submit</button>
+
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Fashion Store. All Rights Reserved</p>
+    </footer>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
