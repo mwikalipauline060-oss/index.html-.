@@ -42,3 +42,15 @@ button{
 button:hover{
     background:#6a0dad;
 }
+.error{
+    color:red;
+    font-size:14px;
+    display:block;
+    margin-bottom:10px;
+}
+
+input,select{
+    width:100%;
+    padding:10px;
+    margin-bottom:5px;
+}
