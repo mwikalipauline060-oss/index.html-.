@@ -1,63 +1,81 @@
-// Welcome message
+// ===========================
+// WELCOME POPUP
+// ===========================
 window.onload = function () {
-    alert("Welcome to our Fashion Store!");
+    setTimeout(function () {
+        alert("👗 Welcome to Luxe Threads!\n\nDiscover the latest in fashion — curated just for you.\n\nEnjoy 10% off your first order when you sign up today!");
+    }, 1000);
 };
 
-// Promotion popup
-function showPromo() {
-    alert("🎉 Special Promotion! Get 30% OFF on selected items.");
+
+// ===========================
+// FORM VALIDATION
+// ===========================
+function validateForm() {
+    let isValid = true;
+
+    // --- NAME ---
+    const name = document.getElementById("name").value.trim();
+    const nameError = document.getElementById("nameError");
+
+    if (name === "") {
+        nameError.textContent = "Full name is required.";
+        isValid = false;
+    } else if (name.length < 3) {
+        nameError.textContent = "Name must be at least 3 characters.";
+        isValid = false;
+    } else {
+        nameError.textContent = "";
+    }
+
+    // --- EMAIL ---
+    const email = document.getElementById("email").value.trim();
+    const emailError = document.getElementById("emailError");
+
+    // Email rule: must match pattern like stacey20@gmail.com
+    const emailPattern = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/;
+
+    if (email === "") {
+        emailError.textContent = "Email address is required.";
+        isValid = false;
+    } else if (!emailPattern.test(email)) {
+        emailError.textContent = "Enter a valid email e.g. stacey20@gmail.com";
+        isValid = false;
+    } else {
+        emailError.textContent = "";
+    }
+
+    // --- PHONE ---
+    const phone = document.getElementById("phone").value.trim();
+    const phoneError = document.getElementById("phoneError");
+
+    // Phone rule: 10 digits starting with 0, or +254 format
+    const phonePattern = /^(0[7][0-9]{8}|(\+254)[7][0-9]{8})$/;
+
+    if (phone === "") {
+        phoneError.textContent = "Phone number is required.";
+        isValid = false;
+    } else if (!phonePattern.test(phone)) {
+        phoneError.textContent = "Enter a valid Kenyan phone number e.g. 0712345678";
+        isValid = false;
+    } else {
+        phoneError.textContent = "";
+    }
+
+    // --- GENDER ---
+    const gender = document.getElementById("gender").value;
+    const genderError = document.getElementById("genderError");
+
+    if (gender === "") {
+        genderError.textContent = "Please select your gender.";
+        isValid = false;
+    } else {
+        genderError.textContent = "";
+    }
+
+    // --- SUCCESS ---
+    if (isValid) {
+        alert("🎉 Thank you, " + name + "!\n\nYou've been added to our VIP list.\nCheck your email (" + email + ") for a welcome gift!");
+        document.getElementById("registrationForm").reset();
+    }
 }
-
-// Form Validation
-document.getElementById("fashionForm").addEventListener("submit", function(e){
-
-    e.preventDefault();
-
-    document.getElementById("nameError").innerHTML="";
-    document.getElementById("emailError").innerHTML="";
-    document.getElementById("phoneError").innerHTML="";
-    document.getElementById("genderError").innerHTML="";
-
-    let name=document.getElementById("name").value.trim();
-    let email=document.getElementById("email").value.trim();
-    let phone=document.getElementById("phone").value.trim();
-    let gender=document.getElementById("gender").value;
-
-    let valid=true;
-
-    if(name==""){
-        document.getElementById("nameError").innerHTML="Name is required.";
-        valid=false;
-    }
-
-    let emailPattern=/^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-
-    if(email==""){
-        document.getElementById("emailError").innerHTML="Email is required.";
-        valid=false;
-    }else if(!emailPattern.test(email)){
-        document.getElementById("emailError").innerHTML="Example: stacey20@gmail.com";
-        valid=false;
-    }
-
-    let phonePattern=/^[0-9]{10}$/;
-
-    if(phone==""){
-        document.getElementById("phoneError").innerHTML="Phone number is required.";
-        valid=false;
-    }else if(!phonePattern.test(phone)){
-        document.getElementById("phoneError").innerHTML="Phone number must contain 10 digits.";
-        valid=false;
-    }
-
-    if(gender==""){
-        document.getElementById("genderError").innerHTML="Please select your gender.";
-        valid=false;
-    }
-
-    if(valid){
-        alert("Registration Successful!");
-        document.getElementById("fashionForm").reset();
-    }
-
-});
