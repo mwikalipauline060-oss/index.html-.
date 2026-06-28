@@ -2,215 +2,110 @@
    PAMIKA'S FASHION STORE — script.js
    ============================================= */
 
-/* ─── 1. WELCOME POPUP ─────────────────────── */
+/* ── 1. WELCOME POPUP (fires first on load) ── */
 
-function showWelcome() {
-  // Show modal as soon as the page loads
-  const modal = document.getElementById('welcomeModal');
-  if (modal) modal.classList.add('active');
+window.onload = function () {
+  document.getElementById('popup').classList.add('show');
+};
+
+function closePopup() {
+  document.getElementById('popup').classList.remove('show');
 }
 
-function closeWelcome() {
-  const modal = document.getElementById('welcomeModal');
-  if (modal) modal.classList.remove('active');
-}
 
-// Also close if user clicks the dark overlay outside the box
-document.addEventListener('DOMContentLoaded', function () {
-  const overlay = document.getElementById('welcomeModal');
-  if (overlay) {
-    overlay.addEventListener('click', function (e) {
-      if (e.target === overlay) closeWelcome();
-    });
-  }
-});
-
-
-/* ─── 2. FORM VALIDATION ────────────────────── */
+/* ── 2. FORM VALIDATION ── */
 
 function submitForm() {
-  const name   = document.getElementById('name').value.trim();
-  const email  = document.getElementById('email').value.trim();
-  const phone  = document.getElementById('phone').value.trim();
-  const gender = document.querySelector('input[name="gender"]:checked');
+  var name   = document.getElementById('name').value.trim();
+  var email  = document.getElementById('email').value.trim();
+  var phone  = document.getElementById('phone').value.trim();
+  var gender = document.querySelector('input[name="gender"]:checked');
 
-  // --- Name validation ---
-  if (!name) {
-    showError('name', 'Please enter your full name.');
-    return;
-  }
-  if (name.length < 3) {
-    showError('name', 'Name must be at least 3 characters long.');
-    return;
-  }
-  clearError('name');
+  // Clear old errors
+  clearAllErrors();
 
-  // --- Email validation ---
-  // Must match: something@something.something  e.g. Pamikavcollection20@gmail.com
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  var valid = true;
+
+  // Name
+  if (!name || name.length < 3) {
+    showError('name', 'Please enter your full name (at least 3 characters).');
+    valid = false;
+  }
+
+  // Email — must match format like Pamikavcollection20@gmail.com
+  var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
   if (!email) {
     showError('email', 'Please enter your email address.');
-    return;
+    valid = false;
+  } else if (!emailRegex.test(email)) {
+    showError('email', 'Invalid email. Example: Pamikavcollection20@gmail.com');
+    valid = false;
   }
-  if (!emailRegex.test(email)) {
-    showError('email', 'Invalid email. Use format: Pamikavcollection20@gmail.com');
-    return;
-  }
-  clearError('email');
 
-  // --- Phone validation ---
-  // Kenyan format: 07xxxxxxxx  or  +2547xxxxxxxx  or  2547xxxxxxxx
-  const phoneRegex = /^(\+?254|0)7\d{8}$/;
-  const phoneCleaned = phone.replace(/\s/g, '');
+  // Phone — Kenyan format 07xxxxxxxx or +2547xxxxxxxx
+  var phoneClean = phone.replace(/\s/g, '');
+  var phoneRegex = /^(\+?254|0)7\d{8}$/;
   if (!phone) {
     showError('phone', 'Please enter your phone number.');
-    return;
+    valid = false;
+  } else if (!phoneRegex.test(phoneClean)) {
+    showError('phone', 'Use format: 0712 345 678 or +254712345678');
+    valid = false;
   }
-  if (!phoneRegex.test(phoneCleaned)) {
-    showError('phone', 'Use Kenyan format: 0712 345 678 or +254712345678');
-    return;
-  }
-  clearError('phone');
 
-  // --- Gender validation ---
+  // Gender
   if (!gender) {
     showGenderError('Please select your gender.');
-    return;
+    valid = false;
   }
-  clearGenderError();
 
-  // --- All valid: show success popup ---
-  showSuccessPopup(name, email, phone, gender.value);
-}
+  if (!valid) return;
 
+  // All valid → show success popup
+  alert('✅ Thank you, ' + name + '!\n\nYour details have been received:\n📧 ' + email + '\n📞 ' + phone + '\n🧑 ' + gender.value + '\n\nWe will contact you soon. Happy shopping! 🛍️');
 
-/* ─── 3. ERROR HELPERS ─────────────────────── */
-
-function showError(fieldId, message) {
-  const field = document.getElementById(fieldId);
-  field.style.borderColor = '#e53935';
-  field.style.background  = '#FFEBEE';
-
-  let errEl = document.getElementById(fieldId + '-err');
-  if (!errEl) {
-    errEl = document.createElement('p');
-    errEl.id = fieldId + '-err';
-    errEl.style.cssText = 'color:#e53935;font-size:0.82rem;margin-top:4px;font-family:Arial,sans-serif;';
-    field.parentNode.appendChild(errEl);
-  }
-  errEl.textContent = '⚠ ' + message;
-  field.focus();
-}
-
-function clearError(fieldId) {
-  const field = document.getElementById(fieldId);
-  field.style.borderColor = '#F0D0E0';
-  field.style.background  = '';
-  const errEl = document.getElementById(fieldId + '-err');
-  if (errEl) errEl.remove();
-}
-
-function showGenderError(message) {
-  let errEl = document.getElementById('gender-err');
-  if (!errEl) {
-    errEl = document.createElement('p');
-    errEl.id = 'gender-err';
-    errEl.style.cssText = 'color:#e53935;font-size:0.82rem;margin-top:6px;font-family:Arial,sans-serif;';
-    document.querySelector('.gender-options').after(errEl);
-  }
-  errEl.textContent = '⚠ ' + message;
-}
-
-function clearGenderError() {
-  const errEl = document.getElementById('gender-err');
-  if (errEl) errEl.remove();
-}
-
-
-/* ─── 4. SUCCESS POPUP ─────────────────────── */
-
-function showSuccessPopup(name, email, phone, gender) {
-  // Remove existing popup if any
-  const old = document.getElementById('successPopup');
-  if (old) old.remove();
-
-  const popup = document.createElement('div');
-  popup.id = 'successPopup';
-  popup.style.cssText = `
-    position:fixed; inset:0; background:rgba(0,0,0,0.6);
-    z-index:9999; display:flex; justify-content:center; align-items:center;
-  `;
-
-  popup.innerHTML = `
-    <div style="
-      background:#fff; border-radius:20px; padding:44px 40px;
-      text-align:center; max-width:440px; width:90%;
-      box-shadow:0 20px 60px rgba(0,0,0,0.3);
-      animation: popIn 0.4s cubic-bezier(0.34,1.56,0.64,1) both;
-    ">
-      <div style="font-size:3rem; margin-bottom:12px;">✅</div>
-      <h2 style="color:#C2185B; margin-bottom:14px; font-family:Georgia,serif;">Form Submitted!</h2>
-      <p style="font-family:Arial,sans-serif; color:#444; line-height:1.8; font-size:0.95rem;">
-        Thank you, <strong>${escapeHTML(name)}</strong>!<br>
-        We've received your details:<br><br>
-        📧 <strong>${escapeHTML(email)}</strong><br>
-        📞 <strong>${escapeHTML(phone)}</strong><br>
-        🧑 <strong>${escapeHTML(gender)}</strong>
-      </p>
-      <p style="font-family:Arial,sans-serif; color:#888; font-size:0.85rem; margin-top:12px;">
-        We'll be in touch very soon. Happy shopping! 🛍️
-      </p>
-      <button onclick="closeSuccessPopup()"
-        style="
-          margin-top:24px; background:linear-gradient(135deg,#C2185B,#880E4F);
-          color:#fff; border:none; border-radius:50px;
-          padding:13px 38px; font-size:1rem; font-family:Arial,sans-serif;
-          font-weight:bold; cursor:pointer; letter-spacing:1px;
-        ">
-        Awesome, Thanks!
-      </button>
-    </div>
-  `;
-
-  document.body.appendChild(popup);
-
-  // Reset form fields
+  // Reset form
   document.getElementById('name').value  = '';
   document.getElementById('email').value = '';
   document.getElementById('phone').value = '';
-  const checkedGender = document.querySelector('input[name="gender"]:checked');
-  if (checkedGender) checkedGender.checked = false;
-}
-
-function closeSuccessPopup() {
-  const popup = document.getElementById('successPopup');
-  if (popup) popup.remove();
-}
-
-// Prevent XSS in popup
-function escapeHTML(str) {
-  const div = document.createElement('div');
-  div.appendChild(document.createTextNode(str));
-  return div.innerHTML;
+  if (gender) gender.checked = false;
+  clearAllErrors();
 }
 
 
-/* ─── 5. REAL-TIME FIELD FEEDBACK ─────────── */
+/* ── 3. ERROR HELPERS ── */
 
-document.addEventListener('DOMContentLoaded', function () {
+function showError(fieldId, message) {
+  var field = document.getElementById(fieldId);
+  field.style.borderColor = '#e53935';
+  field.style.background  = '#ffebee';
 
-  // Clear error styling when user starts typing again
-  ['name', 'email', 'phone'].forEach(function (id) {
-    const el = document.getElementById(id);
-    if (el) {
-      el.addEventListener('input', function () {
-        clearError(id);
-      });
+  var err = document.createElement('p');
+  err.className = 'error-msg';
+  err.id = fieldId + '-err';
+  err.textContent = '⚠ ' + message;
+  field.parentNode.insertBefore(err, field.nextSibling);
+}
+
+function showGenderError(message) {
+  var err = document.createElement('p');
+  err.className = 'error-msg';
+  err.id = 'gender-err';
+  err.textContent = '⚠ ' + message;
+  var gRow = document.querySelector('.gender-row');
+  gRow.parentNode.insertBefore(err, gRow.nextSibling);
+}
+
+function clearAllErrors() {
+  ['name', 'email', 'phone'].forEach(function(id) {
+    var field = document.getElementById(id);
+    if (field) {
+      field.style.borderColor = '';
+      field.style.background  = '';
     }
+    var err = document.getElementById(id + '-err');
+    if (err) err.remove();
   });
-
-  // Radio buttons: clear gender error on selection
-  document.querySelectorAll('input[name="gender"]').forEach(function (radio) {
-    radio.addEventListener('change', clearGenderError);
-  });
-});
+  var gErr = document.getElementById('gender-err');
+  if (gErr) gErr.remove();
+}
