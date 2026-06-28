@@ -1,183 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luxe Threads | Fashion Store</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pamikav Collection</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- NAVIGATION -->
-    <nav>
-        <div class="logo">Luxe Threads</div>
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            PAMIKAV
+        </div>
+
         <ul class="nav-links">
             <li><a href="#">Home</a></li>
             <li><a href="#">Shop</a></li>
             <li><a href="#">Collections</a></li>
-            <li><a href="#">About</a></li>
+            <li><a href="#">Beauty</a></li>
+            <li><a href="#">Accessories</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
-    </nav>
 
-    <!-- HERO -->
-    <header class="hero">
-        <h1>Dress Your Story</h1>
-        <p>Curated fashion for the bold and the beautiful</p>
-        <a href="#shop" class="btn">Shop Now</a>
-    </header>
-
-    <!-- PRODUCT TABLE -->
-    <section class="table-section" id="shop">
-        <h2>Our Collections</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Item</th>
-                    <th>Category</th>
-                    <th>Color</th>
-                    <th>Size</th>
-                    <th>Price (KES)</th>
-                    <th>Availability</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Floral Midi Dress</td>
-                    <td>Dresses</td>
-                    <td>Rose & White</td>
-                    <td>S, M, L</td>
-                    <td>3,500</td>
-                    <td>In Stock</td>
-                </tr>
-                <tr>
-                    <td>Slim Fit Blazer</td>
-                    <td>Tops</td>
-                    <td>Charcoal</td>
-                    <td>M, L, XL</td>
-                    <td>5,200</td>
-                    <td>In Stock</td>
-                </tr>
-                <tr>
-                    <td>High-Waist Trousers</td>
-                    <td>Bottoms</td>
-                    <td>Camel</td>
-                    <td>S, M, L, XL</td>
-                    <td>2,800</td>
-                    <td>Limited</td>
-                </tr>
-                <tr>
-                    <td>Knit Crop Top</td>
-                    <td>Tops</td>
-                    <td>Cream</td>
-                    <td>XS, S, M</td>
-                    <td>1,900</td>
-                    <td>In Stock</td>
-                </tr>
-                <tr>
-                    <td>Wrap Skirt</td>
-                    <td>Bottoms</td>
-                    <td>Terracotta</td>
-                    <td>S, M, L</td>
-                    <td>2,200</td>
-                    <td>Out of Stock</td>
-                </tr>
-                <tr>
-                    <td>Denim Jacket</td>
-                    <td>Outerwear</td>
-                    <td>Light Blue</td>
-                    <td>M, L, XL</td>
-                    <td>4,500</td>
-                    <td>In Stock</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-
-    <!-- IMAGE & VIDEO GRID -->
-    <section class="media-section">
-        <h2>Look Book</h2>
-        <div class="media-grid">
-            <div class="media-item">
-                <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400&h=400&fit=crop" alt="Fashion Look 1">
-                <p>Summer Collection</p>
-            </div>
-            <div class="media-item">
-                <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=400&h=400&fit=crop" alt="Fashion Look 2">
-                <p>Evening Wear</p>
-            </div>
-            <div class="media-item">
-                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=400&fit=crop" alt="Fashion Look 3">
-                <p>Casual Chic</p>
-            </div>
-            <div class="media-item">
-                <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=400&h=400&fit=crop" alt="Fashion Look 4">
-                <p>Street Style</p>
-            </div>
-            <div class="media-item video-item">
-                <video controls poster="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=400&h=300&fit=crop">
-                    <source src="" type="video/mp4">
-                    Your browser does not support video.
-                </video>
-                <p>New Arrivals Reel</p>
-            </div>
-            <div class="media-item video-item">
-                <video controls poster="https://images.unsplash.com/photo-1445205170230-053b83016050?w=400&h=300&fit=crop">
-                    <source src="" type="video/mp4">
-                    Your browser does not support video.
-                </video>
-                <p>Style Guide Video</p>
-            </div>
+        <div class="nav-icons">
+            <span>♡</span>
+            <span>🛒</span>
         </div>
-    </section>
+    </nav>
+</header>
 
-    <!-- REGISTRATION FORM -->
-    <section class="form-section" id="register">
-        <h2>Join Our VIP List</h2>
-        <p>Get exclusive deals and early access to new collections</p>
+<section class="hero">
 
-        <form id="registrationForm" onsubmit="return false;">
+    <div class="hero-content">
+        <span class="tag">Luxury Lifestyle Store</span>
 
-            <div class="form-group">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" placeholder="e.g. Stacey Wanjiru">
-                <small id="nameError" class="error"></small>
-            </div>
+        <h1>
+            Discover Timeless Style For Everyone
+        </h1>
 
-            <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="text" id="email" placeholder="e.g. stacey20@gmail.com">
-                <small id="emailError" class="error"></small>
-            </div>
+        <p>
+            Fashion, beauty, accessories and lifestyle products curated
+            with elegance and sophistication.
+        </p>
 
-            <div class="form-group">
-                <label for="phone">Phone Number</label>
-                <input type="text" id="phone" placeholder="e.g. 0712345678">
-                <small id="phoneError" class="error"></small>
-            </div>
+        <div class="hero-buttons">
+            <a href="#" class="btn-primary">Shop Now</a>
+            <a href="#" class="btn-secondary">Explore Collection</a>
+        </div>
+    </div>
 
-            <div class="form-group">
-                <label for="gender">Gender</label>
-                <select id="gender">
-                    <option value="">-- Select Gender --</option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                    <option value="Prefer not to say">Prefer not to say</option>
-                </select>
-                <small id="genderError" class="error"></small>
-            </div>
+    <div class="hero-image">
+        <img src="images/hero-model.png" alt="">
+    </div>
 
-            <button type="button" onclick="validateForm()">Submit</button>
+</section>
 
-        </form>
-    </section>
+<section class="categories">
 
-    <!-- FOOTER -->
-    <footer>
-        <p>&copy; 2026 Luxe Threads Fashion Store. All Rights Reserved.</p>
-    </footer>
+    <div class="section-title">
+        <h2>Shop By Category</h2>
+    </div>
 
-    <script src="script.js"></script>
+    <div class="category-grid">
+
+        <div class="category-card">
+            <h3>Women's Fashion</h3>
+        </div>
+
+        <div class="category-card">
+            <h3>Men's Fashion</h3>
+        </div>
+
+        <div class="category-card">
+            <h3>Beauty</h3>
+        </div>
+
+        <div class="category-card">
+            <h3>Accessories</h3>
+        </div>
+
+        <div class="category-card">
+            <h3>Home Decor</h3>
+        </div>
+
+        <div class="category-card">
+            <h3>Footwear</h3>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="featured">
+
+    <div class="section-title">
+        <h2>Featured Collection</h2>
+    </div>
+
+    <div class="product-grid">
+
+        <div class="product-card">
+            <img src="images/product1.jpg" alt="">
+            <h4>Luxury Blazer</h4>
+            <p>$79</p>
+        </div>
+
+        <div class="product-card">
+            <img src="images/product2.jpg" alt="">
+            <h4>Premium Handbag</h4>
+            <p>$120</p>
+        </div>
+
+        <div class="product-card">
+            <img src="images/product3.jpg" alt="">
+            <h4>Elegant Dress</h4>
+            <p>$99</p>
+        </div>
+
+        <div class="product-card">
+            <img src="images/product4.jpg" alt="">
+            <h4>Classic Watch</h4>
+            <p>$149</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="luxury-banner">
+
+    <div class="banner-content">
+        <h2>Where Luxury Meets Everyday Living</h2>
+
+        <p>
+            Crafted for individuals who appreciate elegance,
+            quality and timeless fashion.
+        </p>
+
+        <a href="#" class="btn-primary">
+            Discover More
+        </a>
+    </div>
+
+</section>
+
+<footer>
+
+    <h3>PAMIKAV COLLECTION</h3>
+
+    <p>
+        Premium Fashion • Beauty • Lifestyle
+    </p>
+
+</footer>
 
 </body>
 </html>
