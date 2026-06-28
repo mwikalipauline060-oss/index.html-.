@@ -143,70 +143,6 @@ window.onload = function() {
 function closePopup() {
     document.getElementById("welcomePopup").style.display = "none";
 }
-
-
-
-
-function validateForm(){
-
-    let name =
-    document.getElementById("name").value;
-
-    let email =
-    document.getElementById("email").value;
-
-    let phone =
-    document.getElementById("phone").value;
-
-    let password =
-    document.getElementById("password").value;
-
-    let message =
-    document.getElementById("message");
-
-    /* Validate Name */
-
-    if(name === ""){
-        message.innerHTML =
-        "Name can't be blank.";
-        message.className = "error";
-        return false;
-    }
-
-    /* Validate Email */
-
-    if(email === ""){
-        message.innerHTML =
-        "Please enter your email.";
-        message.className = "error";
-        return false;
-    }
-
-    /* Validate Phone */
-
-    if(phone === ""){
-        message.innerHTML =
-        "Please enter your phone number.";
-        message.className = "error";
-        return false;
-    }
-
-    /* Validate Password */
-
-    if(password.length < 10){
-        message.innerHTML =
-        "Password must be at least 10 characters.";
-        message.className = "error";
-        return false;
-    }
-
-    message.innerHTML =
-    "Registration Successful!";
-    message.className = "success";
-
-    return false;
-
-}
 </script>
 
 </body>
@@ -386,27 +322,76 @@ function validateForm(){
     </iframe>
   </section>
 
-  <!-- CONTACT FORM -->
-  <section id="contact" class="section">
-    <h2>Registration Form</h2>
+	<script>
+	function validateForm(){
 
-    <div class="form-wrap">
-      <label>Name:</label>
-      <input type="text" id="name" placeholder="Your full name" /><br/>
+    let name =
+    document.getElementById("name").value;
 
-      <label>Email:</label>
-      <input type="email" id="email" placeholder="e.g. Pamikavcollection20@gmail.com" /><br/>
+    let email =
+    document.getElementById("email").value;
 
-      <label>Phone Number:</label>
-      <input type="tel" id="phone" placeholder="e.g. 0712 345 678" /><br/>
+    let phone =
+    document.getElementById("phone").value;
 
-      <label>Gender:</label>
-      <div class="gender-row">
-        <label><input type="radio" name="gender" value="Male" /> Male</label>
-        <label><input type="radio" name="gender" value="Female" /> Female</label>
-      </div><br/>
+    let password =
+    document.getElementById("password").value;
 
-      <button onclick="submitForm()">Submit</button>
+    let message =
+    document.getElementById("message");
+
+    /* Validate Name */
+
+    if(name === ""){
+        message.innerHTML =
+        "Name can't be blank.";
+        message.className = "error";
+        return false;
+    }
+
+    /* Validate Email */
+
+    if(email === ""){
+        message.innerHTML =
+        "Please enter your email.";
+        message.className = "error";
+        return false;
+    }
+
+    /* Validate Phone */
+
+    if(phone === ""){
+        message.innerHTML =
+        "Please enter your phone number.";
+        message.className = "error";
+        return false;
+    }
+
+    /* Validate Password */
+
+    if(password.length < 10){
+        message.innerHTML =
+        "Password must be at least 10 characters.";
+        message.className = "error";
+        return false;
+    }
+
+    message.innerHTML =
+    "Registration Successful!";
+    message.className = "success";
+
+    return false;
+
+}
+</script>
+
+</body>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pamika's Fashion Store</title>
+  <link rel="stylesheet" href="style.css" 
+ 
     </div>
   </section>
 
