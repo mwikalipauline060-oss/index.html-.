@@ -1,6 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!DOCTYPE html>
+<html>
+<head>
+    <title>Portfolio Website</title>
+
+    <style>
+        /* Popup Background */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Popup Content */
+        .popup-content {
+            background: white;
+            width: 400px;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
+        }
+
+        .popup-content h2 {
+            color: #0077cc;
+        }
+
+        .close-btn {
+            background: red;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .close-btn:hover {
+            background: darkred;
+        }
+		
+		       body{
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+
+        form{
+            width: 350px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+
+        input{
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+
+        button{
+            background-color: blue;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .error{
+            color: red;
+            font-size: 14px;
+        }
+
+        .success{
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>My Fashion store Website</h1>
+<p>Welcome to my website.</p>
+
+
+<!-- Popup -->
+<div class="popup" id="welcomePopup">
+    <div class="popup-content">
+	    <img src="profile.jpg"
+         width="150">
+        <h2>Welcome!</h2>
+
+        <p>
+            I was in playing call of duty thats why i dint attend class.
+            Explore my projects, skills, and achievements.
+        </p>
+
+        <button class="close-btn" onclick="closePopup()">
+            Close
+        </button>
+    </div>
+</div>
+<h2>Student Registration Form</h2>
+
+<form onsubmit="return validateForm()">
+
+    <label>Full Name</label>
+    <input type="text" id="name">
+
+    <label>Email</label>
+    <input type="email" id="email">
+
+    <label>Phone Number</label>
+    <input type="text" id="phone">
+
+    <label>Password</label>
+    <input type="password" id="password">
+
+    <p id="message"></p>
+
+    <button type="submit">
+        Register
+    </button>
+
+</form>
+
+<script>
+
+window.onload = function() {
+    document.getElementById("welcomePopup").style.display = "flex";
+}
+
+function closePopup() {
+    document.getElementById("welcomePopup").style.display = "none";
+}
+
+
+
+
+function validateForm(){
+
+    let name =
+    document.getElementById("name").value;
+
+    let email =
+    document.getElementById("email").value;
+
+    let phone =
+    document.getElementById("phone").value;
+
+    let password =
+    document.getElementById("password").value;
+
+    let message =
+    document.getElementById("message");
+
+    /* Validate Name */
+
+    if(name === ""){
+        message.innerHTML =
+        "Name can't be blank.";
+        message.className = "error";
+        return false;
+    }
+
+    /* Validate Email */
+
+    if(email === ""){
+        message.innerHTML =
+        "Please enter your email.";
+        message.className = "error";
+        return false;
+    }
+
+    /* Validate Phone */
+
+    if(phone === ""){
+        message.innerHTML =
+        "Please enter your phone number.";
+        message.className = "error";
+        return false;
+    }
+
+    /* Validate Password */
+
+    if(password.length < 10){
+        message.innerHTML =
+        "Password must be at least 10 characters.";
+        message.className = "error";
+        return false;
+    }
+
+    message.innerHTML =
+    "Registration Successful!";
+    message.className = "success";
+
+    return false;
+
+}
+</script>
+
+</body>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Pamika's Fashion Store</title>
