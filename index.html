@@ -6,74 +6,104 @@
   <title>Pamika's Fashion Store</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body onload="showWelcome()">
+<body>
+
+  <!-- POPUP (appears first on load) -->
+  <div id="popup" class="popup-overlay">
+    <div class="popup-box">
+      <h2>👗 Welcome to Pamika's Fashion Store!</h2>
+      <p>New arrivals are here! Trendy outfits, shoes & accessories at amazing prices in KSh.</p>
+      <p><strong>Shop. Style. Slay. ✨</strong></p>
+      <button onclick="closePopup()">OK, Let's Shop!</button>
+    </div>
+  </div>
 
   <!-- NAVIGATION -->
-  <nav class="navbar">
-    <div class="logo">👗 Pamika's Collection</div>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#shop">Shop</a></li>
-      <li><a href="#table">Catalogue</a></li>
-      <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="#about">About</a>
+    <a href="#shop">Shop</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
   </nav>
 
-  <!-- HERO / ABOUT SECTION -->
-  <section id="about" class="hero">
-    <h1>Welcome to Pamika's Fashion Store</h1>
-    <p class="tagline">Redefining style, one outfit at a time.</p>
-    <p class="description">
-      Pamika's Fashion Store is your premier online destination for trendy, affordable, and high-quality clothing and accessories.
-      From casual wear to formal outfits, we bring you curated collections that keep you looking chic and confident every day.
-      All prices are in Kenyan Shillings (KSh). Shop now and express your unique style!
+  <!-- HEADER -->
+  <header>
+    <h1>👗 Pamika's Fashion Store</h1>
+  </header>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="section">
+    <h2>Welcome to Pamika's Fashion Store</h2>
+    <p>
+      Your number one destination for trendy, affordable and high-quality fashion in Kenya.
+      From stylish dresses and suits to shoes, handbags and accessories — we have everything you need
+      to look and feel your best. All prices are in Kenyan Shillings (KSh). New arrivals every week!
+    </p>
+    <p>
+      Whether you are dressing up for a special occasion or keeping it casual, Pamika's Fashion Store
+      has the perfect outfit for you. Visit us today or shop online and get delivery right to your door.
     </p>
   </section>
 
-  <!-- SHOP SECTION -->
-  <section id="shop" class="shop-section">
-    <h2>What We Sell</h2>
+  <!-- GALLERY: IMAGES & VIDEOS -->
+  <section id="gallery" class="section">
+    <h2>Our Fashion Collection</h2>
 
-    <div class="list-grid">
-      <!-- Ordered List -->
-      <div class="list-box">
-        <h3>Our Top Categories</h3>
-        <ol>
-          <li>Women's Dresses</li>
-          <li>Men's Suits & Shirts</li>
-          <li>Shoes & Heels</li>
-          <li>Handbags & Clutches</li>
-          <li>Accessories & Jewellery</li>
-          <li>Kids' Fashion</li>
-        </ol>
-      </div>
-
-      <!-- Unordered List -->
-      <div class="list-box">
-        <h3>Why Shop With Us?</h3>
-        <ul>
-          <li>✅ Free delivery within Nairobi</li>
-          <li>✅ 100% genuine products</li>
-          <li>✅ Easy returns & exchanges</li>
-          <li>✅ Secure M-Pesa payments</li>
-          <li>✅ New arrivals every week</li>
-        </ul>
-      </div>
+    <div class="media-grid">
+      <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=500&h=350&fit=crop" alt="Women's Fashion" />
+      <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=500&h=350&fit=crop" alt="Fashion Show" />
+      <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=500&h=350&fit=crop" alt="Shopping" />
+      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=350&fit=crop" alt="Shoes" />
+      <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=500&h=350&fit=crop" alt="Men's Fashion" />
+      <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=500&h=350&fit=crop" alt="Handbags" />
+      <iframe src="https://www.youtube.com/embed/9oBECzFk0EY" title="Fashion Trends" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/1O4nZi4iusQ" title="Fashion Tips" allowfullscreen></iframe>
     </div>
+  </section>
 
-    <!-- Product Cards with Images & Prices -->
-    <h3 class="section-sub">Featured Products</h3>
+  <!-- PRICE TABLE -->
+  <section id="shop" class="section">
+    <h2>Our Price List</h2>
+    <p><em>Pamika's Fashion Store — Current Prices</em></p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Category</th>
+          <th>Size</th>
+          <th>Price (KSh)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Floral Summer Dress</td><td>Women</td><td>S, M, L</td><td>2,500</td></tr>
+        <tr><td>African Print Dress</td><td>Women</td><td>S, M, L, XL</td><td>2,000</td></tr>
+        <tr><td>Denim Jacket</td><td>Women</td><td>S, M, L, XL</td><td>3,200</td></tr>
+        <tr><td>Classic Men's Suit</td><td>Men</td><td>38–46</td><td>8,500</td></tr>
+        <tr><td>Men's Casual Shirt</td><td>Men</td><td>S–XXL</td><td>1,200</td></tr>
+        <tr><td>Trendy Sneakers</td><td>Shoes</td><td>36–45</td><td>4,200</td></tr>
+        <tr><td>Formal Heels</td><td>Shoes</td><td>36–42</td><td>2,800</td></tr>
+        <tr><td>Luxury Handbag</td><td>Accessories</td><td>One Size</td><td>3,800</td></tr>
+        <tr><td>Gold Jewellery Set</td><td>Accessories</td><td>One Size</td><td>1,900</td></tr>
+        <tr><td>Kids' Party Outfit</td><td>Kids</td><td>2–10 yrs</td><td>1,500</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- PRODUCTS WITH IMAGES & PRICES -->
+  <section class="section">
+    <h2>Featured Items</h2>
     <div class="products-grid">
 
       <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400&h=400&fit=crop" alt="Women's Dress" />
+        <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400&h=400&fit=crop" alt="Dress" />
         <p class="product-name">Floral Summer Dress</p>
         <p class="price">KSh 2,500</p>
       </div>
 
       <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=400&h=400&fit=crop" alt="Men's Suit" />
+        <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=400&h=400&fit=crop" alt="Suit" />
         <p class="product-name">Classic Men's Suit</p>
         <p class="price">KSh 8,500</p>
       </div>
@@ -97,7 +127,7 @@
       </div>
 
       <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1503944583220-79d8926ad5e2?w=400&h=400&fit=crop" alt="Kids Fashion" />
+        <img src="https://images.unsplash.com/photo-1503944583220-79d8926ad5e2?w=400&h=400&fit=crop" alt="Kids" />
         <p class="product-name">Kids' Party Outfit</p>
         <p class="price">KSh 1,500</p>
       </div>
@@ -105,93 +135,76 @@
     </div>
   </section>
 
-  <!-- FULL PAGE TABLE SECTION -->
-  <section id="table" class="table-section">
-    <h2>Product Catalogue</h2>
-    <table class="catalogue-table">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Item</th>
-          <th>Category</th>
-          <th>Size</th>
-          <th>Color</th>
-          <th>Price (KSh)</th>
-          <th>In Stock</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>1</td><td>Floral Summer Dress</td><td>Women</td><td>S, M, L</td><td>Pink / White</td><td>2,500</td><td>✔ Yes</td></tr>
-        <tr><td>2</td><td>Classic Men's Suit</td><td>Men</td><td>38–46</td><td>Navy / Black</td><td>8,500</td><td>✔ Yes</td></tr>
-        <tr><td>3</td><td>Trendy Sneakers</td><td>Shoes</td><td>36–45</td><td>White / Red</td><td>4,200</td><td>✔ Yes</td></tr>
-        <tr><td>4</td><td>Luxury Handbag</td><td>Accessories</td><td>One Size</td><td>Brown / Black</td><td>3,800</td><td>✔ Yes</td></tr>
-        <tr><td>5</td><td>Gold Jewellery Set</td><td>Accessories</td><td>One Size</td><td>Gold</td><td>1,900</td><td>✔ Yes</td></tr>
-        <tr><td>6</td><td>Kids' Party Outfit</td><td>Kids</td><td>2–10 yrs</td><td>Multicolor</td><td>1,500</td><td>✔ Yes</td></tr>
-        <tr><td>7</td><td>Denim Jacket</td><td>Women</td><td>S, M, L, XL</td><td>Blue / Black</td><td>3,200</td><td>✔ Yes</td></tr>
-        <tr><td>8</td><td>Formal Heels</td><td>Shoes</td><td>36–42</td><td>Nude / Black</td><td>2,800</td><td>✔ Yes</td></tr>
-        <tr><td>9</td><td>African Print Dress</td><td>Women</td><td>S, M, L, XL</td><td>Various</td><td>2,000</td><td>✔ Yes</td></tr>
-        <tr><td>10</td><td>Men's Casual Shirt</td><td>Men</td><td>S–XXL</td><td>Blue / White</td><td>1,200</td><td>✔ Yes</td></tr>
-      </tbody>
-    </table>
-  </section>
+  <!-- LISTS -->
+  <section class="section lists-section">
 
-  <!-- IMAGE & VIDEO GALLERY -->
-  <section id="gallery" class="gallery-section">
-    <h2>Images & Videos Gallery</h2>
-    <div class="media-grid">
-      <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=500&h=350&fit=crop" alt="Fashion 1" />
-      <iframe src="https://www.youtube.com/embed/9oBECzFk0EY" title="Fashion Trends" allowfullscreen></iframe>
-      <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=500&h=350&fit=crop" alt="Fashion 2" />
-      <iframe src="https://www.youtube.com/embed/1O4nZi4iusQ" title="Fashion Tips" allowfullscreen></iframe>
-      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=350&fit=crop" alt="Fashion 3" />
-      <iframe src="https://www.youtube.com/embed/tg_V7VNjf6g" title="African Fashion" allowfullscreen></iframe>
+    <div class="list-box">
+      <h3>How To Order</h3>
+      <ol>
+        <li>Browse our collection above</li>
+        <li>Pick your item and size</li>
+        <li>Fill in the contact form below</li>
+        <li>We confirm your order via WhatsApp</li>
+        <li>Pay via M-Pesa</li>
+        <li>Receive delivery or pick up in store</li>
+      </ol>
     </div>
+
+    <div class="list-box">
+      <h3>What We Offer</h3>
+      <ul>
+        <li>Women's Dresses & Tops</li>
+        <li>Men's Suits & Shirts</li>
+        <li>Shoes & Heels</li>
+        <li>Handbags & Clutches</li>
+        <li>Jewellery & Accessories</li>
+        <li>Kids' Fashion</li>
+        <li>Free Delivery in Nairobi</li>
+      </ul>
+    </div>
+
   </section>
 
-  <!-- CONTACT / FORM SECTION -->
-  <section id="contact" class="contact-section">
-    <h2>Get In Touch</h2>
-    <p>Fill in your details below and we'll get back to you shortly.</p>
-    <div class="form-container">
-      <div class="form-group">
-        <label for="name">Full Name</label>
-        <input type="text" id="name" placeholder="e.g. Amika Wanjiku" />
-      </div>
-      <div class="form-group">
-        <label for="email">Email Address</label>
-        <input type="email" id="email" placeholder="e.g. Pamikavcollection20@gmail.com" />
-      </div>
-      <div class="form-group">
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" placeholder="e.g. 0712 345 678" />
-      </div>
-      <div class="form-group">
-        <label>Gender</label>
-        <div class="gender-options">
-          <label><input type="radio" name="gender" value="Female" /> Female</label>
-          <label><input type="radio" name="gender" value="Male" /> Male</label>
-          <label><input type="radio" name="gender" value="Prefer not to say" /> Prefer not to say</label>
-        </div>
-      </div>
+  <!-- MAP -->
+  <section class="section">
+    <h2>Find Us</h2>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8193773246!2d36.8172!3d-1.2864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10bef13ee1d3%3A0xc0cf9c17a8dc0f3e!2sNairobi%2C%20Kenya!5e0!3m2!1sen!2ske!4v1680000000000"
+      class="map-frame"
+      allowfullscreen
+      loading="lazy">
+    </iframe>
+  </section>
+
+  <!-- CONTACT FORM -->
+  <section id="contact" class="section">
+    <h2>Registration Form</h2>
+
+    <div class="form-wrap">
+      <label>Name:</label>
+      <input type="text" id="name" placeholder="Your full name" /><br/>
+
+      <label>Email:</label>
+      <input type="email" id="email" placeholder="e.g. Pamikavcollection20@gmail.com" /><br/>
+
+      <label>Phone Number:</label>
+      <input type="tel" id="phone" placeholder="e.g. 0712 345 678" /><br/>
+
+      <label>Gender:</label>
+      <div class="gender-row">
+        <label><input type="radio" name="gender" value="Male" /> Male</label>
+        <label><input type="radio" name="gender" value="Female" /> Female</label>
+      </div><br/>
+
       <button onclick="submitForm()">Submit</button>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="footer">
+  <footer>
     <p>© 2025 Pamika's Fashion Store | Nairobi, Kenya</p>
     <p>📧 Pamikavcollection20@gmail.com &nbsp;|&nbsp; 📞 +254 712 345 678</p>
   </footer>
-
-  <!-- WELCOME POPUP -->
-  <div id="welcomeModal" class="modal-overlay">
-    <div class="modal-box">
-      <div class="modal-icon">👗</div>
-      <h2>Welcome to Pamika's Fashion Store!</h2>
-      <p>Your one-stop destination for trendy, affordable fashion in Kenya. Explore our latest collections and shop with style!</p>
-      <button onclick="closeWelcome()">Let's Shop! 🛍️</button>
-    </div>
-  </div>
 
   <script src="script.js"></script>
 </body>
